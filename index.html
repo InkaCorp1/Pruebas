@@ -158,7 +158,7 @@
 
       if (!r.ok) {
         const errorText = await r.text().catch(() => '');
-        throw new Error(HTTP ${r.status}: ${r.statusText}${errorText ? ' - ' + errorText : ''});
+        throw new Error("HTTP " + r.status + ": " + r.statusText + (errorText ? ' - ' + errorText : ''));
       }
       
       const payload = await r.json();
